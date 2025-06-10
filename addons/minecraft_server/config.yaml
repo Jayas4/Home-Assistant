@@ -1,0 +1,32 @@
+name: "Minecraft Server Manager"
+version: "1.0.0"
+slug: "minecraft_manager"
+description: "Gestionnaire de serveur Minecraft avec interface web"
+url: "https://github.com/your_repository/minecraft_manager"
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+startup: application
+boot: auto
+ports:
+  25565/tcp: 25565
+ports_description:
+  25565/tcp: "Port Minecraft Server"
+map:
+  - share:rw
+options:
+  max_memory: "2G"
+  min_memory: "1G"
+  minecraft_version: "1.21.5"
+schema:
+  max_memory: str
+  min_memory: str
+  minecraft_version: str
+ingress: true
+ingress_port: 80
+panel_icon: mdi:minecraft
+panel_title: Minecraft Manager
+init: false 
